@@ -1,0 +1,38 @@
+@import '../common/styles/coupon';
+@import '../common/styles/card';
+@import '../common/styles/search';
+@import '../common/styles/alerts';
+header{
+  background-color: #313439;
+  .banner{
+    margin-left: 1em;
+    margin-right: 3em;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    color: white;
+  }
+}
+
+#container {
+  width: 450px;
+} 
+
+.tabs{
+  li.indicator{
+    background-color: black;
+    color: black;
+  }
+  .tab{
+    a{
+      color: black;
+      &.active{
+        color: black;
+        background-color: #eeeeee !important;
+      }
+      &:hover{
+        color: black;
+      }
+    }
+  }
+}

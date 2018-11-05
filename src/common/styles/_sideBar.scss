@@ -1,0 +1,130 @@
+$side-bar-menu-color: darken($color: white, $amount: 5);
+
+.side-bar{
+  box-shadow: 0.2rem 0.2rem $darker;
+  border-radius: 0.3rem;
+  min-width: 2rem;
+  min-height: 10rem;
+  max-width: 2rem;
+  max-height: 10rem;
+  display: flex;
+  background-color: $light;
+  transition: all 300ms;
+  display: flex;
+  flex-wrap: wrap;
+  flex-direction: column;
+  padding: 0.2rem 0.2rem;
+  &:hover{
+    min-width: 2.2rem;
+    min-height: 11rem;
+    max-width: 2.2rem;
+    max-height: 11rem;
+  }
+  .icon{
+    transition: all 200ms;
+    margin-right: 0.2rem;
+    border-radius: 0.2rem;
+    min-height: 1.8em;
+    background-color: $dark;
+    box-shadow: 0.2rem 0.2rem $darker;
+    &:active{
+      box-shadow: 0.1rem 0.1rem $darker;
+    }
+    &:hover{
+      path{
+        fill: darken(white, 15%);
+      }
+    }
+    path{
+      transition: all 300ms;
+      fill: white;
+    }
+  }
+}
+
+.cp-box{
+  z-index: 99999;
+  position: fixed;
+  width: 100%;
+  margin-top: 12rem;
+}
+
+.side-bar-parent{
+  display: flex;
+  justify-content: flex-end;
+}
+
+.side-bar-child{
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  padding: 0 0;
+}
+
+.side-bar-modal{
+  background-color: white;
+  display: none;
+  width: 450px;
+}
+
+.cp-side-bar-menu{
+  width: 20rem;
+  height: 20rem;
+  overflow-y: scroll;
+  background-color: $side-bar-menu-color;
+  border-radius: 10px;
+}
+
+.cp-side-bar-menu-parent{
+  display: flex;
+  align-items: center;
+}
+
+.cp-side-bar-menu-trangle-right{
+  order: 2;
+  width: 0rem;
+  height: 0rem;
+  border-left: 0.5rem solid $side-bar-menu-color;
+  border-top: 0.5rem solid transparent;
+  border-bottom: 0.5rem solid transparent;
+}
+
+.cp-side-bar-menu{
+  .coupon, .deal{
+    border-radius: 10px;
+    width: 18rem;
+    margin: 1rem 1rem;
+    background-color: darken(white, 10);
+    .detail{
+      padding: 1rem 0.5rem;
+    }
+    .header{
+      border-radius: 10px;
+      text-align: center;
+      padding-top: 0.4rem;
+      background-color: darken(white, 11);
+    }
+  }
+}
+
+.side-bar{
+  .icon{
+    padding: 0.1rem 0.2rem;
+    margin-bottom: 0.8rem;
+    &:first-child{
+      margin-top: 0.1rem;
+    }  
+  }
+  &:hover{
+    .icon{
+      margin-bottom: 1.2rem;
+      transform: scale(1.1);
+      &:last-child{
+        margin-bottom: 0rem;
+      }
+    }
+  }
+  &:last-child{
+    margin-bottom: 0rem;
+  }
+}

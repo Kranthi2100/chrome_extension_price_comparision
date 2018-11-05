@@ -1,0 +1,31 @@
+.container{
+  margin-top: 5em;
+}
+
+.collapsible-header, .collapsible-body{
+  padding: 0px 0px 0px 0px !important; 
+  border-bottom: 0em;
+}
+
+.collapsible-header > p{
+  padding: 0em 0em 1em 1.5em;
+  font-size: 1.8em;
+  font-weight: 450;
+}
+
+.option{
+  display: flex;
+  justify-content: space-between;
+  flex-direction: row;
+  align-items: center;
+}
+
+.title{
+    padding: 0.5em 0.5em;
+    margin-bottom: 0em;
+  }
+
+.option p{
+  font-size: 1.5em !important;
+  font-weight: 450;
+}

@@ -1,0 +1,51 @@
+{
+  "name":"Price Comparision",
+  "version":"1.0",
+  "description": "Compare price across multiple sites",
+  "manifest_version": 2,
+  "background": {
+    "scripts": ["background.js"],
+    "persistent": false
+  },
+  "options_page": "options/options.html",
+  "permissions": [
+    "storage",
+    "tabs"
+  ],
+  "content_scripts":[
+    {
+      "matches": ["*://www.amazon.in/*"],
+      "js": ["content_scripts/amazon/amazon.js"],
+      "css": [
+        "content_scripts/amazon/amazon.css"
+      ]
+    },
+    {
+      "matches": ["*://www.flipkart.com/*"],
+      "js": [
+        "resource/scripts/chart.js",
+        "content_scripts/flipkart/flipkart.js"
+      ],
+      "css": [
+          "content_scripts/flipkart/flipkart.css"
+        ]
+    },
+    {
+      "matches": ["*://www.croma.com/*"],
+      "js": ["content_scripts/croma/croma.js"],
+      "css": [
+          "content_scripts/croma/croma.css"
+        ]
+    },
+    {
+      "matches": ["*://www.tatacliq.com/*"],
+      "js": ["content_scripts/tatacliq/tatacliq.js"],
+      "css": [
+          "content_scripts/tatacliq/tatacliq.css"
+        ]
+    }
+  ],
+  "browser_action": {
+    "default_popup": "popup/popup.html"
+  }
+}

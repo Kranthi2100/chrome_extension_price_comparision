@@ -1,0 +1,64 @@
+//card for options
+
+$card_color: darken(white, 3%);
+$card_shadow: darken($card_color, 50%);
+$zz-c1: darken(white, 6%);
+$zz-c2: darken(white, 6%);
+
+.card {
+  font-size: 16px;
+  height: 10rem;
+  width: 95%;
+  font-family: 'Nova Mono', monospace;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-around;
+  margin-top: 2rem; 
+  box-shadow: 0em 0em 0.005em 0em $card_shadow;
+  background-color: $card_color;
+
+ &:before {  //zig-zag pattern -top
+  background: linear-gradient(-45deg, $zz-c1 0.3em, transparent 0), linear-gradient(45deg, $zz-c2 0.3em, transparent 0);
+  background-size: 0.6em 1em;
+  background-repeat: repeat-x;
+  position: absolute;
+  content: "";
+  width: 29.1rem;
+  height: 3rem;
+  // transform: translateY(8rem); 
+  transform: translateY(-4.68rem); 
+  }
+
+ &:after { //zip-zag pattern bottom
+  background: linear-gradient(145deg, $zz-c1 0.3em, transparent 0), linear-gradient(-145deg, $zz-c2 0.3em, transparent 0);
+  background-size: 0.6em 1.1em;
+  background-repeat: repeat-x;
+  position: absolute;
+  content: "";
+  width: 29.1rem;
+  height: 1.3rem;
+  transform: translateY(4.9em);
+  }
+}
+
+.detail{
+  // margin-top: 1rem;
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: center;
+  padding: 0.1rem 0.1rem;
+  .campaign{
+    // margin-left: 1rem;
+    // padding-left: 2rem;
+    flex: 1;
+    border: 0.1rem dotted black;
+    *{
+      padding-left: 1rem;
+    }
+  }
+  .description{
+    flex: 3;
+    margin-left: 1rem;
+  }
+}

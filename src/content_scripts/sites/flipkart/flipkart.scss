@@ -1,0 +1,16 @@
+$default: rgb(40, 116, 240);
+$light: darken($default, 3%);
+$dark: darken($default, 10%);
+$darker: darken($default, 15%); // scroll-bar
+
+// $light: #F1F3F6;
+// $dark: white;
+// $darker: darken($light, 15%); //scroll-bar
+
+#cp-comparision-banner{
+  p, div {
+    color: white !important;
+  }
+}
+
+@import '../../common/styles/main';

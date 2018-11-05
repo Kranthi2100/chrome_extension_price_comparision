@@ -1,0 +1,201 @@
+@mixin transform($property) {
+  -webkit-transform: $property;
+    -moz-transition: $property;
+      -ms-transform: $property;
+          transform: $property;
+}
+
+@mixin transition($property) {
+  -webkit-transition: $property;
+     -moz-transition: $property;
+      -ms-transition: $property;
+          transition: $property;
+}
+
+#cp-comparision-banner{
+  padding-top: 2em;
+  font-family: Arial, Helvetica, sans-serif;
+  font-size: 0.9em;
+  font-weight: 550;
+}
+
+.cp-main{
+  padding-top: 0.5em;
+  padding-bottom: 0.5em;
+  display: flex;
+  justify-content: center;
+  align-self: auto;
+  align-items: center;
+  color: white;
+  z-index: 100000;
+  margin-top: -2em;
+  box-shadow: 0.1em 0.1em darken($light, 10%);
+}
+
+.cp-main p, .cp-main a, .cp-main .cp-more-option-toggle{
+  display: inline;
+}
+
+@keyframes add_new{
+  from{
+    padding-top: 1em;
+  }
+  to{
+    padding-top: 0.5em;
+  }
+}
+
+.cp-menu{
+  .triangle-base{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    .triangle{
+      // background-color: $darker;
+      background-color: $dark;
+      width: 0.8em;
+      height: 0.8em;
+      -webkit-clip-path: polygon(50% 0%, 0% 100%, 100% 100%);
+      clip-path: polygon(50% 0%, 0% 100%, 100% 100%);
+      box-shadow: 0.1em 0.1em darken($dark, 20%);
+    }
+  }
+  display: none;
+  z-index: 100001;
+  position: absolute;
+  width: 27em;
+  height: 30em;
+  margin-top: -0.2em;
+  padding-top: 0.5em;
+  animation: 300ms add_new;
+}
+
+
+.cp--option {
+  @include transition(height 300ms);
+  width: 27em;
+  height: auto;
+  max-height: 30em;
+  border-radius: 0.5em;
+  overflow-y:auto;
+  box-shadow: 0.1em 0.1em darken($dark, 20%);
+  // animation: 300ms add_new
+}
+
+.cp-modal{
+  margin: 1em 1em;
+  min-height: 10.5em;
+  max-height: 10.5em;
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  border-radius: 0.5em;
+  box-shadow: 0.1em 0.1em darken($dark, 10%);
+  @include transition(box-shadow 300ms);
+  .image-base{
+    min-height: inherit;
+    display: flex;
+    align-items: center;
+    border-radius: inherit;
+    background-color: white;
+  }
+}
+
+.cp-modal:hover{
+  box-shadow: 0.2em 0.2em darken($dark, 10%);
+}
+
+.cp-modal p{
+  word-wrap: break-word;
+  color: white;
+  z-index: 1001;
+}
+
+.cp--option a:hover{
+  text-decoration: none;
+}
+
+.cp-detail{
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  flex-wrap: wrap;
+  margin-left: 1em;
+  margin-right: 1em;
+  max-width: 18em;
+  .cp-meta{
+    padding-top: 1em;
+  }
+}
+
+.cp-modal img {
+  width: 100%;
+  height: 100%;
+  max-width: 5em;
+  border-top-left-radius: 0.5em; 
+  border-bottom-left-radius: 0.5em; 
+  object-fit: cover;
+  object-position: center center;
+}
+
+.cp-mx-1{
+  margin: 1em;
+}
+
+.cp-mx-4{
+  margin: 4em;
+}
+
+.cp-ml-4{
+  margin-left: 4em;
+}
+.cp-ml-8{
+  margin-left: 8em;
+}
+
+.cp-close-banner{
+  position: absolute;
+  right: 0;
+  margin-right: 1em;
+  cursor: pointer;
+  font-size: 1.5em;
+}
+
+.cp-more-option-toggle{
+  cursor: pointer;
+}
+
+::-webkit-scrollbar {
+  width: 0.6em;
+}
+
+/* Track */
+::-webkit-scrollbar-track {
+  box-shadow: inset 0 0 1px $light; 
+  border-radius: 5px;
+}
+
+/* Handle */
+::-webkit-scrollbar-thumb {
+  background: $dark; 
+  border-radius: 5px;
+}
+
+/* Handle on hover */
+::-webkit-scrollbar-thumb:hover {
+  background:  $darker; 
+}
+
+.cp--lighter-background{
+  background-color: $light;
+}
+
+.cp--darker-background{
+  background-color: $dark;
+}
+
+.cp-block{
+  position: fixed;
+  z-index: 100000;
+  width: 100%;
+}
